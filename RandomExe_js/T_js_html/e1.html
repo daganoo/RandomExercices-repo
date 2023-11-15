@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E1</title>
+</head>
+<body>
+    <h1>dwm</h1>
+    <div></div>
+    <button class="jour">jour</button>
+    <button class="nuit">nuit</button>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            
+            var jourButton = document.querySelector('.jour');
+            var nuitButton = document.querySelector('.nuit');
+
+            jourButton.addEventListener('click', function() {
+                document.body.style.backgroundColor = 'white';
+                document.querySelector('h1').style.color = 'black';
+            });
+
+            nuitButton.addEventListener('click', function() {
+                document.body.style.backgroundColor = 'black';
+                document.querySelector('h1').style.color = 'white';
+            });
+        });
+    </script>
+</body>
+</html>

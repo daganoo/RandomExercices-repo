@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E2 images</title>
+    <style>
+        img {
+            max-width: 15%;
+            height: auto;
+            display: block;
+            margin:20px 30px 20px 10px ;  
+        }
+    </style>
+</head>
+
+<body>
+
+    <img id="slideshow" src="image1.jpg" alt="Image 1">
+
+    <button onclick="slide_stop()">Arrêter</button>
+    <button onclick="slide_start()">Reprendre</button>
+
+    <script>
+        var images = ["dd1.jpg", "dd2.jpg", "dd3.jpg"];
+        var currIndex = 0;  
+        var inv;
+
+        function slide_start() {
+            inv = setInterval(changeImage, 200);
+        }
+        function slide_stop() {
+            clearInterval(inv);
+        }
+        function changeImage() {
+            currIndex = (currIndex + 1) % images.length;
+            document.getElementById("slideshow").src = images[currIndex];
+        }
+
+        slide_start();
+    </script>
+</body>
+
+</html>

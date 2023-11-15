@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exe4</title>
+</head>
+<body>
+
+<h2>List</h2>
+
+<form id="shoppingForm">
+    <label for="item">ecrit</label>
+    <input type="text" id="item" required>
+    <button type="button" onclick="Ddd()">Ajouter</button>
+</form>
+
+<ul id="sList"></ul>
+
+<script>
+    function Ddd() {
+        var label_input = document.getElementById("item");
+        var itemName = label_input.value.trim();
+
+        
+            var sList = document.getElementById("sList");
+            var listItem = document.createElement("li");
+
+            listItem.innerHTML = `
+                <span>${itemName}</span>
+                <button onclick="removeItem(this)">Supprimer</button>
+            `;
+
+            sList.appendChild(listItem);
+
+            label_input.value = "";
+            label_input.focus();
+       
+    }
+
+    function removeItem(button) {
+        var listItem = button.parentNode;
+        var sList = listItem.parentNode;
+
+        sList.removeChild(listItem);
+    }
+</script>
+
+</body>
+</html>
