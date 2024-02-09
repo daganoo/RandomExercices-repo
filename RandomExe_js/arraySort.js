@@ -12,4 +12,4 @@ for (let i = 0; i < arr.length - 1; i++) {
 }
 console.log(arr);
 
- //explain the exercice :sort an array 
+ //explain the exercice :sort an array one of sorts
